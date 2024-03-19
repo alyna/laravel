@@ -6,6 +6,9 @@ use App\Services\NewsImporter;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
+/**
+ * The command used to import the news in the application
+ */
 class ImportNews extends Command
 {
     /**
@@ -27,6 +30,9 @@ class ImportNews extends Command
      */
     const FILE_NAME = "storage/app/news.json";
 
+    /**
+     * @param NewsImporter $importer
+     */
     public function __construct(private readonly NewsImporter $importer)
     {
         parent::__construct();
@@ -35,7 +41,7 @@ class ImportNews extends Command
     /**
      * @return int
      */
-    public function handle()
+    public function handle(): int
     {
         try {
             $this->importer->run(self::FILE_NAME);

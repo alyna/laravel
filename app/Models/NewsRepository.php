@@ -5,6 +5,9 @@ namespace App\Models;
 
 use Carbon\Carbon;
 
+/**
+ * The repository used to load the list of news
+ */
 class NewsRepository implements NewsRepositoryInterface
 {
     /**

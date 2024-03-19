@@ -3,9 +3,15 @@ namespace App\Services;
 
 use Carbon\Carbon;
 
+/**
+ * News mapper class
+ */
 class NewsMapper
 {
     /**
+     * Maps the data from the json to the columns expected
+     * by the application
+     *
      * @param array $data
      * @return array
      */
@@ -26,6 +32,9 @@ class NewsMapper
     }
 
     /**
+     * Returns the author of the news by concatenating
+     * the firstname, middlename and lastname
+     *
      * @param array $data
      * @return string|null
      */

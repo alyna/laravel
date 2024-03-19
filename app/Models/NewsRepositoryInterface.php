@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+/**
+ * News repository interface
+ */
 interface NewsRepositoryInterface
 {
     /**

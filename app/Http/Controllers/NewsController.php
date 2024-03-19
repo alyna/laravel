@@ -6,7 +6,6 @@ use App\Http\Resources\NewsCollection;
 use App\Models\NewsRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 
 /**
  * @OA\Get(
@@ -47,12 +46,19 @@ use Illuminate\Validation\ValidationException;
  */
 class NewsController extends Controller
 {
+    /**
+     * @param NewsRepositoryInterface $repository
+     */
     public function __construct(private readonly NewsRepositoryInterface $repository)
     {
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a list of news filtered by a given published date
+     *
+     * @param Request $request
+     * @param string $publishedDate
+     * @return JsonResponse
      */
     public function index(Request $request, string $publishedDate): JsonResponse
     {

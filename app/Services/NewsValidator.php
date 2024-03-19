@@ -3,13 +3,17 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
+/**
+ * News validator class
+ */
 class NewsValidator
 {
     /**
      * @param array $data
      * @return array
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function validate(array $data): array
     {
