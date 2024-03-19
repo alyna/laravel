@@ -1,0 +1,47 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "News API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/news/{publishedDate}": {
+            "get": {
+                "tags": [
+                    "News"
+                ],
+                "description": "Returns the news published in a specific date",
+                "operationId": "99fe63b380cddfd2dce56aa754606b53",
+                "parameters": [
+                    {
+                        "name": "publishedDate",
+                        "in": "path",
+                        "description": "Published date",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "datetime"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}
